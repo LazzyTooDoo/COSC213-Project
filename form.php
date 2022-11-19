@@ -6,7 +6,7 @@ if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
     exit();
 } else {
-    if (!emtpy($_POST)) {
+    if (!empty($_POST)) {
         $sql = "INSERT INTO Users VALUES ('".$_POST["fname"].", ".$_POST["lname"].", ".$_POST["email"].", ".$_POST["phone"]."')";
         $res = mysqli_query($mysqli, $sql) or die(mysqli_error($mysqli));
 
