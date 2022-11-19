@@ -6,23 +6,23 @@ if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
     exit();
 } else {
-//    if (!empty($_POST)) {
-//        $sql = "INSERT INTO Users VALUES ('".$_POST["fname"].", ".$_POST["lname"].", ".$_POST["email"].", ".$_POST["phone"]."')";
-//        $res = mysqli_query($mysqli, $sql) or die(mysqli_error($mysqli));
-//
-//        if ($res === TRUE) {
-//            echo "A record has been inserted.";
-//        } else {
-//            printf("Could not insert record: %s\n", mysqli_error($mysqli));
-//        }
-//        mysqli_free_result($res);
-//    }
+    if (!empty($_POST)) {
+        $sql = "INSERT INTO Users VALUES ('".$_POST["fname"].", ".$_POST["lname"].", ".$_POST["email"].", ".$_POST["phone"]."')";
+        $res = mysqli_query($mysqli, $sql) or die(mysqli_error($mysqli));
+
+        if ($res === TRUE) {
+            echo "A record has been inserted.";
+        } else {
+            printf("Could not insert record: %s\n", mysqli_error($mysqli));
+        }
+        mysqli_free_result($res);
+    }
     $sql = "SELECT * FROM Users;";
     $res = mysqli_query($mysqli, $sql) or die (mysqli_error($mysqli));
 
     if (mysqli_num_rows($res) > 0) {
         ?>
-        <table">
+        <table>
         <tr>
             <th><h2>First Name</h2></th>
             <th><h2>Last Name</h2></th>
