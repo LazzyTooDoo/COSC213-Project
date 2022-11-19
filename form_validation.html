@@ -7,7 +7,7 @@
 <body>
     <a href="index.html">Go To Home</a><br><br>
     <!-- form -->
-    <form name="form" action="/action_page.php" onsubmit="return validateForm()" method="post">
+    <form name="form" action="" onsubmit="return validateForm()" method="post">
         First Name: <br>
         <input type="text" name="fname" required><br>
         Last Name: <br>
@@ -20,24 +20,23 @@
         <p id="formConfirm"></p>
     </form>
     <script>
-        function validateNum() {
-            // Get the value of the input field with id="numb"
-            let x = document.getElementById("num").value;
-            // If x is Not a Number or less than one or greater than 10
-            let text;
-            if (isNaN(x) || x < 1 || x > 10) {
-                text = "Input not valid";
-            } else {
-                text = "Input OK";
-            }
-            document.getElementById("demo").innerHTML = text;
-        }
+        // function validateNum() {
+        //     // Get the value of the input field with id="numb"
+        //     let x = document.getElementById("num").value;
+        //     // If x is Not a Number or less than one or greater than 10
+        //     let text;
+        //     if (isNaN(x) || x < 1 || x > 10) {
+        //         text = "Input not valid";
+        //     } else {
+        //         text = "Input OK";
+        //     }
+        //     document.getElementById("demo").innerHTML = text;
+        // }
         function validateForm() {
-            // Get the value of the input field with id="numb"
             let phone = document.getElementById("phone").value;
-            // If x is Not a Number or less than one or greater than 10
             let text;
-            if (phone !== `/^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$/im`) {
+            var re = /^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$/im;
+            if (!(re.test(phone))) {
                 text = "Phone Number Not Valid.";
                 return false;
             }
