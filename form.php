@@ -7,7 +7,7 @@ if (mysqli_connect_errno()) {
     exit();
 } else {
     if (!empty($_POST)) {
-        $sql = "INSERT INTO Users VALUES ('".$_POST["fname"].", ".$_POST["lname"].", ".$_POST["email"].", ".$_POST["phone"]."')";
+        $sql = "INSERT INTO Users VALUES ('".$_POST["fname"]."', '".$_POST["lname"]."', '".$_POST["email"]."', '".$_POST["phone"]."')";
         $res = mysqli_query($mysqli, $sql) or die(mysqli_error($mysqli));
 
         if ($res === TRUE) {
