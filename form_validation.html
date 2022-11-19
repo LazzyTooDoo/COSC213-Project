@@ -36,9 +36,10 @@
                 return false;
             } else {
                 text = "Input OK";
+                document.getElementById("numConfirm").innerHTML = text;
                 return false;
             }
-            document.getElementById("numConfirm").innerHTML = text;
+
         }
         function validateForm() {
             let phone = document.forms["form"]["phone"].value;
