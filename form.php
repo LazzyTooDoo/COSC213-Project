@@ -15,7 +15,6 @@ if (mysqli_connect_errno()) {
         } else {
             printf("Could not insert record: %s\n", mysqli_error($mysqli));
         }
-        mysqli_free_result($res);
     }
     $sql = "SELECT * FROM Users;";
     $res = mysqli_query($mysqli, $sql) or die (mysqli_error($mysqli));
