@@ -41,10 +41,8 @@
         }
         function validateForm() {
             let phone = document.forms["form"]["phone"].value;
-            let text;
             if (!(validatePhoneNumber(phone))) {
-                text = "Phone Number Not Valid.";
-                document.getElementById("formConfirm").innerHTML = text;
+                alert("Phone number must be valid.");
                 return false;
             }
         }
