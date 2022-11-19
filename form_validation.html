@@ -9,29 +9,33 @@
     <!-- form -->
     <form name="form" action="" onsubmit="return validateForm()" method="post">
         First Name: <br>
-        <input type="text" name="fname" ><br>
+        <input type="text" name="fname" required><br>
         Last Name: <br>
-        <input type="text" name="lname" ><br>
+        <input type="text" name="lname" required><br>
         Email: <br>
-        <input type="text" name="email"><br>
+        <input type="email" name="email" required><br>
         Telephone: <br>
-        <input type="text" name="phone"><br>
+        <input type="text" name="phone" required><br><br>
         <input type="submit" value="Submit">
         <p id="formConfirm"></p>
-    </form>
+    </form><br><br>
+    <p id="break">***************************************************************************<p><br><br>
+    <form name="form" action="" onsubmit="return validateNum()" method="post">
+        Enter your lucky number (must be between 1 and 100): <br>
+        <input type="text" name="num" required><br>
+        <p id="numConfirm"></p>
+    </form><br><br>
     <script>
-        // function validateNum() {
-        //     // Get the value of the input field with id="numb"
-        //     let x = document.getElementById("num").value;
-        //     // If x is Not a Number or less than one or greater than 10
-        //     let text;
-        //     if (isNaN(x) || x < 1 || x > 10) {
-        //         text = "Input not valid";
-        //     } else {
-        //         text = "Input OK";
-        //     }
-        //     document.getElementById("demo").innerHTML = text;
-        // }
+        function validateNum() {
+            let x = document.getElementById("num").value;
+            let text;
+            if (isNaN(x) || x < 1 || x > 100) {
+                text = "Input not valid";
+            } else {
+                text = "Input OK";
+            }
+            document.getElementById("numConfirm").innerHTML = text;
+        }
         function validateForm() {
             let phone = document.forms["form"]["phone"].value;
             let text;
