@@ -3,22 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Lazar Todorovic - Form Validation</title>
-    <script>
-        function validateForm() {
-            let x = document.forms["myForm"]["fname"].value;
-            if (x == "") {
-                alert("Name must be filled out");
-                return false;
-            }
-        }
-    </script>
 </head>
 <body>
     <a href="index.html">Go To Home</a><br><br>
     <!-- form -->
     <form name="form" action="/action_page.php" onsubmit="return validateForm()" method="post">
-        Name: <input type="text" name="fname">
+        First Name: <br>
+        <input type="text" name="fname" required><br>
+        Last Name: <br>
+        <input type="text" name="lname" required><br>
+        Email: <br>
+        <input type="text" name="email"><br>
+        Telephone: <br>
+        <input type="text" name="phone"><br>
         <input type="submit" value="Submit">
+        <p id="formConfirm"></p>
     </form>
+    <script>
+        function validateNum() {
+            // Get the value of the input field with id="numb"
+            let x = document.getElementById("num").value;
+            // If x is Not a Number or less than one or greater than 10
+            let text;
+            if (isNaN(x) || x < 1 || x > 10) {
+                text = "Input not valid";
+            } else {
+                text = "Input OK";
+            }
+            document.getElementById("demo").innerHTML = text;
+        }
+        function validateForm() {
+            // Get the value of the input field with id="numb"
+            let phone = document.getElementById("phone").value;
+            // If x is Not a Number or less than one or greater than 10
+            let text;
+            if (phone !== `/^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$/im`) {
+                text = "Phone Number Not Valid.";
+                return false;
+            }
+            document.getElementById("formConfirm").innerHTML = text;
+        }
+    </script>
 </body>
 </html>
