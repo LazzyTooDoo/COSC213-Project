@@ -35,12 +35,15 @@
         function validateForm() {
             let phone = document.getElementById("phone").value;
             let text;
-            var re = /^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$/im;
-            if (!(re.test(phone))) {
+            if (!(validatePhoneNumber(phone))) {
                 text = "Phone Number Not Valid.";
                 return false;
             }
             document.getElementById("formConfirm").innerHTML = text;
+        }
+        function validatePhoneNumber(input_str) {
+            var re = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+            return re.test(input_str);
         }
     </script>
 </body>
