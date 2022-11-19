@@ -18,17 +18,17 @@
         <input type="text" name="phone" required><br><br>
         <input type="submit" value="Submit">
         <p id="formConfirm"></p>
-    </form><br>
-    <p id="break">***************************************************************************<p><br>
+    </form>
+    <p id="break">***************************************************************************<p>
     <form name="numForm" action="" onsubmit="return validateNum()" method="post">
         Enter your lucky number (must be between 1 and 100): <br>
-        <input type="text" name="num" required><br>
+        <input type="text" name="num" required><br><br>
         <input type="submit" value="Submit">
         <p id="numConfirm"></p>
     </form><br>
     <script>
         function validateNum() {
-            let x = document.getElementById("num").value;
+            let x = document.forms["numForm"]["num"].value;
             let text;
             if (isNaN(x) || x < 1 || x > 100) {
                 text = "Input not valid";
