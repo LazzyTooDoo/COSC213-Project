@@ -16,7 +16,7 @@ if (mysqli_connect_errno()) {
                 <th><h2>First Name</h2></th>
                 <th><h2>Last Name</h2></th>
                 <th><h2>Email</h2></th>
-                <th"><h2>Phone Number</h2></th>
+                <th><h2>Phone Number</h2></th>
             </tr>
 
         <?php
