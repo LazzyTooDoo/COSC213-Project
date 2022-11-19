@@ -37,9 +37,9 @@
             let text;
             if (!(validatePhoneNumber(phone))) {
                 text = "Phone Number Not Valid.";
+                document.getElementById("formConfirm").innerHTML = text;
                 return false;
             }
-            document.getElementById("formConfirm").innerHTML = text;
         }
         function validatePhoneNumber(input_str) {
             var re = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
