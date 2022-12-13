@@ -24,7 +24,8 @@ else {
 
     // define a response for AJAX
     $response = "";
-    if ($retrieveResult === true) {
+    $numRows = mysqli_num_rows($retrieveResult);
+    if ($numRows > 0) {
         while($row = mysqli_fetch_array($retrieveResult)) {
             $response = "The entered email " . $row['email'] . " was retrieved from the database.";
         }
