@@ -5,18 +5,25 @@
     <title>Lazar Todorovic - JQuery Demo</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function(){
-            $("#test1ToggleBtn").click(function(){
+        $(document).ready(function () {
+            $("#test1ToggleBtn").click(function () {
                 $("#test1txt").toggle();
             });
-            $("#test1ShowBtn").click(function(){
+            $("#test1ShowBtn").click(function () {
                 $("#test1txt").show();
             });
-            $("#test1HideBtn").click(function(){
+            $("#test1HideBtn").click(function () {
                 $("#test1txt").hide();
             });
-            $("#test2btn").click(function(){
+            $("#test2btn").click(function () {
                 $("#test2txt").slideToggle("slow");
+            });
+            $("#test3AnimateBtn").click(function(){
+                let div = $("#test3img");
+                div.animate({height: '400px'}, "fast");
+                div.animate({width: '400px'}, "fast");
+                div.animate({height: '150px'}, "fast");
+                div.animate({width: '150px'}, "fast");
             });
         });
     </script>
@@ -31,13 +38,17 @@
     </style>
 </head>
 <body>
-    <a href="219index.html">Return to Demos</a><br><hr>
-    <button id="test1ToggleBtn">Click Me to Toggle Text Below</button>
-    <button id="test1ShowBtn">Click Me to Show Text Below</button>
-    <button id="test1HideBtn">Click Me to Hide Text Below</button>
-    <p id="test1txt">Look at me! I'm aliiiiiiiive!</p>
-    <hr>
-    <button id="test2btn">Click Me For a Slide Surprise</button>
-    <div id="test2txt">Oi oi oi. Please hide me.</div>
+<a href="219index.html">Return to Demos</a><br>
+<hr>
+<button id="test1ToggleBtn">Click Me to Toggle Text Below</button>
+<button id="test1ShowBtn">Click Me to Show Text Below</button>
+<button id="test1HideBtn">Click Me to Hide Text Below</button>
+<p id="test1txt">Look at me! I'm aliiiiiiiive!</p>
+<hr>
+<button id="test2btn">Click Me For a Slide Surprise</button>
+<div id="test2txt">Oi oi oi. Please hide me.</div>
+<hr>
+<button id="test3AnimateBtn">Animate the Egg Man</button>
+<div id="test3img" style="height: 150px; width: 150px; position: absolute"><img src="img/egg%20face.png"/></div>
 </body>
 </html>
