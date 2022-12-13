@@ -24,8 +24,13 @@ else {
 
     // define a response for AJAX
     $response = "";
-    while($row = mysqli_fetch_array($retrieveResult)) {
-        $response = "The entered email " . $row['email'] . " was retrieved from the database.";
+    if ($retrieveResult === true) {
+        while($row = mysqli_fetch_array($retrieveResult)) {
+            $response = "The entered email " . $row['email'] . " was retrieved from the database.";
+        }
+    } else {
+        $response = "Could not find the email in the database.";
     }
+
     echo $response;
 }
