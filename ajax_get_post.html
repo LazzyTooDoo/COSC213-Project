@@ -19,7 +19,7 @@
 <div id="post"></div>
 <form action="" method="POST">
     <label for="postEmail">Send your email to the database:</label>
-    <input type="email" id="postEmail" name="email" value="Email goes here." required>
+    <input type="email" id="postEmail" name="email" value="" required>
     <input type="button" onclick="postToDB()" value="Submit Email">
 </form>
 <hr>
@@ -27,7 +27,7 @@
 <div id="getResponse"></div>
 <form method="GET" action="">
     <label for="getEmail">Retrieve your email from the database:</label>
-    <input type="email" id="getEmail" name="email" value="Email goes here.">
+    <input type="email" id="getEmail" name="email" value="" required>
     <input type="button" value="Get Email" onclick="getFromDB()">
 </form>
 </body>
@@ -73,7 +73,7 @@
         let email = document.getElementById("getEmail").value;
 
         xhttp.onreadystatechange = function () {
-            if (xhttp.readyState == 4 && xhttp.status == 200) {
+            if (xhttp.readyState === 4 && xhttp.status === 200) {
                 document.getElementById("getResponse").innerHTML = this.responseText;
             }
         };
