@@ -11,6 +11,9 @@
 	background-size: cover;
 	background-position: center;
 }
+.top-nav {
+	background-color: #191919;
+}
 nav{
 	display: flex;
 	align-items: center;
