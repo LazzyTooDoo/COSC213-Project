@@ -19,7 +19,7 @@ else {
     $email = filter_input(INPUT_GET,'email');
 
     // create database insert query and insert it into database
-    $retrieve = "SELECT * FROM ajaxtest WHERE email='$email';";
+    $retrieve = "SELECT * FROM ajaxtest WHERE email='".$email."';";
     $retrieveResult = mysqli_query($mysqli, $retrieve) or die(mysqli_error($mysqli));
 
     // define a response for AJAX
@@ -29,5 +29,3 @@ else {
     }
     echo $response;
 }
-$conn->close();
-?>
