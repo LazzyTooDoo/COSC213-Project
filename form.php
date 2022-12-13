@@ -1,3 +1,4 @@
+<link href="css/219style.css" rel="stylesheet">
 <a id="home" href="219index.html">Return to Demos</a><br><br>
 <?php
 $mysqli = mysqli_connect("localhost", "laztodo", "malazaris", "testDB");
