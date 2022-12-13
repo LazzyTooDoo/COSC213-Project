@@ -41,12 +41,12 @@
             xhttp.send("&email=" + email);
         }
         function getFromDB() {
-            let xhttp = new XMLHttpRequest();
+            const xhttp = new XMLHttpRequest();
             let email = document.getElementById("getEmail").value;
 
             xhttp.onreadystatechange = function () {
-                if (xhttp.readyState == 4 && xhttp.status == 200) {
-                    document.getElementById("getResponse").innerHTML = this.responseText;
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("getResponse").innerHTML = "does this even work";
                 }
             };
 
