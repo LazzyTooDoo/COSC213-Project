@@ -21,8 +21,8 @@
             $("#test3AnimateBtn").click(function(){
                 let div = $("#test3img");
                 div.animate({height: '400px', width: '400px'}, "slow");
-                div.animate({height: '150px'}, "fast");
-                div.animate({width: '150px'}, "fast");
+                div.animate({height: '70px'}, "fast");
+                div.animate({width: '150px', height:'150px'}, "fast");
             });
             $("#test3FadeInBtn").click(function() {
                $('#test3img').fadeIn("slow");
@@ -55,8 +55,7 @@
 <hr>
 <button id="test3AnimateBtn">Animate the Egg Man</button>
 <button id="test3FadeInBtn">Fade In the Egg Man</button>
-<button id="test3FadeOutBtn">Fade Out the Egg Man</button><br>
-
+<button id="test3FadeOutBtn">Fade Out the Egg Man</button><br><br>
 <img id="test3img" style="height: 150px; width: 150px; position: absolute" src="img/eggface.png"/>
 </body>
 </html>
