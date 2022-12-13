@@ -1,13 +1,13 @@
 <?php
-$servername = "69.172.204.200";
-$username = "ocseti";
-$password = "newaccount20$";
-$dbname = "ocseti_cosc219";
+$address= "localhost";
+$username = "laztodo";
+$password = "malazaris";
+$dbname = "testDB";
 
 //session_start();
 //include 'login-info.php';
 
-$mysqli = mysqli_connect($servername, $username, $password, $dbname);
+$mysqli = mysqli_connect($address, $username, $password, $dbname);
 
 if(mysqli_connect_errno()) {
     printf("Database connection failed: %s\n", mysqli_connect_error());
@@ -18,7 +18,7 @@ else {
     $email = filter_input(INPUT_POST,'email');
 
     // create database insert query and insert it into database
-    $insert = "INSERT INTO AJAXDemo2020 (email) values ('$email')";
+    $insert = "INSERT INTO ajaxtest (email) values ('$email')";
     $insertResult = mysqli_query($mysqli, $insert) or die(mysqli_error($mysqli));
 
     // define a response for AJAX
@@ -30,5 +30,3 @@ else {
     }
     echo $response;
 }
-$conn->close();
-?>
