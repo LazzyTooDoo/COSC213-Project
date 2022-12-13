@@ -3,6 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <title>Lazar Todorovic - AJAX Get and Post</title>
+    <script>
+        function loadDoc() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 1) {
+                    document.getElementById("rs1").innerHTML = "1: server connection established";
+                }
+                if (this.readyState == 2) {
+                    document.getElementById("rs2").innerHTML = " 2: request received";
+                }
+                if (this.readyState == 3) {
+                    document.getElementById("rs3").innerHTML = "3: processing request ";
+                }
+                if (this.readyState == 4) {
+                    document.getElementById("rs4").innerHTML = "4: request finished and response is ready";
+                }
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("text").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "ajax_info.txt");
+            xhttp.send();
+        }
+        function postToDB() {
+            let email = document.getElementById("postEmail").value;
+            let xhttp = new XMLHttpRequest();
+
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    document.getElementById("post").innerHTML = this.responseText;
+                }
+            };
+
+            xhttp.open("POST", "AJAXdbEntry.php", true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send("&email=" + email);
+        }
+        function getFromDB() {
+            let xhttp = new XMLHttpRequest();
+            let email = document.getElementById("getEmail").value;
+
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState === 4 && xhttp.status === 200) {
+                    document.getElementById("getResponse").innerHTML = this.responseText;
+                }
+            };
+
+            xhttp.open("GET", "AJAXdbGET.php?email=" + email, true);
+            xhttp.send();
+        }
+    </script>
 </head>
 <body>
 <a href="219index.html">Return to Demos</a><br><br>
@@ -31,55 +82,5 @@
     <input type="button" value="Get Email" onclick="getFromDB()">
 </form>
 </body>
-<script>
-    function loadDoc() {
-        const xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 1) {
-                document.getElementById("rs1").innerHTML = "1: server connection established";
-            }
-            if (this.readyState == 2) {
-                document.getElementById("rs2").innerHTML = " 2: request received";
-            }
-            if (this.readyState == 3) {
-                document.getElementById("rs3").innerHTML = "3: processing request ";
-            }
-            if (this.readyState == 4) {
-                document.getElementById("rs4").innerHTML = "4: request finished and response is ready";
-            }
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("text").innerHTML = this.responseText;
-            }
-        };
-        xhttp.open("GET", "ajax_info.txt");
-        xhttp.send();
-    }
-    function postToDB() {
-        let email = document.getElementById("postEmail").value;
-        let xhttp = new XMLHttpRequest();
 
-        xhttp.onreadystatechange = function () {
-            if (xhttp.readyState == 4 && xhttp.status == 200) {
-                document.getElementById("post").innerHTML = this.responseText;
-            }
-        };
-
-        xhttp.open("POST", "AJAXdbEntry.php", true);
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("&email=" + email);
-    }
-    function getFromDB() {
-        let xhttp = new XMLHttpRequest();
-        let email = document.getElementById("getEmail").value;
-
-        xhttp.onreadystatechange = function () {
-            if (xhttp.readyState === 4 && xhttp.status === 200) {
-                document.getElementById("getResponse").innerHTML = this.responseText;
-            }
-        };
-
-        xhttp.open("GET", "AJAXdbGET.php?email=" + email, true);
-        xhttp.send();
-    }
-</script>
 </html>
