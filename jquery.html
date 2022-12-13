@@ -6,8 +6,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script>
         $(document).ready(function(){
-            $("#test1btn").click(function(){
+            $("#test1ToggleBtn").click(function(){
                 $("#test1txt").toggle();
+            });
+            $("#test1ShowBtn").click(function(){
+                $("#test1txt").show();
+            });
+            $("#test1HideBtn").click(function(){
+                $("#test1txt").hide();
             });
             $("#test2btn").click(function(){
                 $("#test2txt").slideToggle("slow");
@@ -30,7 +36,9 @@
 </head>
 <body>
     <a href="219index.html">Return to Demos</a><br><hr>
-    <button id="test1btn">Click Me to Toggle Text Below</button>
+    <button id="test1ToggleBtn">Click Me to Toggle Text Below</button>
+    <button id="test1ShowBtn">Click Me to Show Text Below</button>
+    <button id="test1HideBtn">Click Me to Hide Text Below</button>
     <p id="test1txt">Look at me! I'm aliiiiiiiive!</p>
     <hr>
     <button id="test2btn">Click Me For a Slide Surprise</button>
