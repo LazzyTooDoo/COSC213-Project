@@ -3,13 +3,3 @@
     font-family: 'Open Sans', sans-serif;
 }
 
-nav ul li {
-    list-style-type: none;
-    display: inline-block;
-    padding: 5px  5px;
-}
-
-#mainpage {
-    align: right;
-}
-
