@@ -1,5 +1,1 @@
-AJAX is not a programming language.
-
-AJAX is a technique for accessing web servers from a web page.
-
-AJAX stands for Asynchronous JavaScript And XML.
+Reading from the ajax_info text file. Hallelujah.
