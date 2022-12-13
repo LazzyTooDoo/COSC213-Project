@@ -35,7 +35,7 @@
                 }
             };
             xhttp.open("POST", "AJAXdbEntry.php", true);
-            // xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhttp.send("&email=" + email);
         }
         function getFromDB() {
