@@ -1,4 +1,4 @@
-<a id="home" href="219index.html">Go To Home</a><br><br>
+<a id="home" href="219index.html">Return to Demos</a><br><br>
 <?php
 $mysqli = mysqli_connect("localhost", "laztodo", "malazaris", "testDB");
 
