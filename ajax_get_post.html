@@ -45,12 +45,12 @@
             let email = document.getElementById("getEmail").value;
 
             xhttp.onreadystatechange = function () {
-                if (xhttp.readyState === 4 && xhttp.status === 200) {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
                     document.getElementById("getResponse").innerHTML = this.responseText;
                 }
             };
 
-            xhttp.open("GET", "AJAXdbGET.php?email=" + email, true);
+            xhttp.open("GET", "AJAXdbGET.php?email=" + email);
             xhttp.send();
         }
     </script>
@@ -68,14 +68,14 @@
 <hr>
 <p>Method: POST email to database</p>
 <div id="post"></div>
-<form action="" method="POST">
+<form method="POST" action="">
     <label for="postEmail">Send your email to the database:</label>
     <input type="email" id="postEmail" name="email" value="" required>
     <input type="button" onclick="postToDB()" value="Submit Email">
 </form>
 <hr>
 <p>Method: Get email from database</p>
-<div id="getResponse"></div>
+<p id="getResponse"></p>
 <form method="GET" action="">
     <label for="getEmail">Retrieve your email from the database:</label>
     <input type="email" id="getEmail" name="email" value="" required>
