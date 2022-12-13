@@ -7,14 +7,30 @@
 <body>
     <a href="219index.html">Go To Home</a><br><br>
     <button onclick="loadDoc()">Click me for AJAX Action</button><br>
-    <p id="demo"></p>
+    <p id="rs1"></p>
+    <p id="rs2"></p>
+    <p id="rs3"></p>
+    <p id="rs4"></p>
+    <p id="text"></p>
 
 </body>
 <script>
     function loadDoc() {
         const xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
-                document.getElementById("demo").innerHTML = "Ready state: " +  this.readyState;
+            if (this.readyState == 1 && this.status == 200) {
+                document.getElementById("rs1").innerHTML = "1: server connection established";
+            }
+            if (this.readyState == 2 && this.status == 200) {
+                document.getElementById("rs2").innerHTML = " 2: request received";
+            }
+            if (this.readyState == 3 && this.status == 200) {
+                document.getElementById("rs3").innerHTML = "3: processing request ";
+            }
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("rs4").innerHTML = "4: request finished and response is ready";
+                document.getElementById("text").innerHTML = this.responseText;
+            }
         };
         xhttp.open("GET", "ajax_info.txt");
         xhttp.send();
