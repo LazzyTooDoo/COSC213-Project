@@ -13,15 +13,31 @@
 <body>
 	<!----hero Section start---->
 
-	<div class="hero">
+	<div class="main-nav">
 		<nav>
 			<h2 class="logo">Portfo<span>lio</span></h2>
 			<ul>
 				<li><a href="#">Home</a></li>
-				<li><a href="#">About Us</a></li>
+				<li><a href="#">WordPress Blog</a></li>
 				<li><a href="#">Services</a></li>
 				<li><a href="#">Skills</a></li>
-				<li><a href="#">Contact Us</a></li>
+				<li onclick="myFunction()" class="dropbtn"><a href="#">About Me</a></li>
+				<ul id="myDropdown" class="dropdown-content">
+					<li><a href="#">Link 1</a></li>
+					<li><a href="#">Link 2</a></li>
+					<li><a href="#">Link 3</a></li>
+				</ul>
+			</ul>
+			<a href="#" class="btn">Subscribe</a>
+		</nav>
+
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">WordPress Blog</a></li>
+				<li><a href="#">Services</a></li>
+				<li><a href="#">Skills</a></li>
+				<li><a href="#">About Me</a></li>
 			</ul>
 			<a href="#" class="btn">Subscribe</a>
 		</nav>
@@ -115,4 +131,25 @@
 		<p class="end">CopyRight By Tahmid Ahmed</p>
 	</footer>
 </body>
+<script>
+	/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+	function myFunction() {
+		document.getElementById("myDropdown").classList.toggle("show");
+	}
+
+	// Close the dropdown menu if the user clicks outside of it
+	window.onclick = function(event) {
+		if (!event.target.matches('.dropbtn')) {
+			var dropdowns = document.getElementsByClassName("dropdown-content");
+			var i;
+			for (i = 0; i < dropdowns.length; i++) {
+				var openDropdown = dropdowns[i];
+				if (openDropdown.classList.contains('show')) {
+					openDropdown.classList.remove('show');
+				}
+			}
+		}
+	}
+</script>
 </html>
