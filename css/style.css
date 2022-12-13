@@ -58,7 +58,7 @@ nav ul li a:hover{
 	position: absolute;
 	background-color: #f1f1f1;
 	min-width: 160px;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 	z-index: 1;
 }
 
@@ -97,7 +97,7 @@ nav ul li a:hover{
 }
 h1{
 	color: white;
-	margin: 20px 0px 20px;
+	margin: 20px 0 20px;
 	font-size: 75px;
 }
 h3{
@@ -112,7 +112,7 @@ h4{
 }
 .about{
 	width: 100%;
-	padding: 100px 0px;
+	padding: 100px 0;
 	background-color: #191919;
 }
 .about img{
@@ -176,9 +176,9 @@ footer{
 	justify-content: center;
 }
 footer p:nth-child(1){
-	font-size: 30px;
+	font-size: 25px;
 	color: white;
-	margin-bottom: 20px;
+	margin-bottom: 5px;
 	font-weight: bold;
 }
 footer p:nth-child(2){
